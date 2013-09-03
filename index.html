@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <title>Artskart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="google" value="notranslate" />
+		
+		<link href="css/styles.min.css" rel="stylesheet" />
+        <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+        <script src="Scripts/external.min.js"> </script>
+       
+        <script src="Scripts/Artskart.Settings.js"> </script>            
+        <script src="Scripts/artskart.min.js"> </script>
+		<script src="phonegap.js"></script>
+    </head>
+    <body>
+        <div id="map" class="needsclick"></div>
+            
+            <div id="debug"></div>
+            <div id="summary"></div>
+            <div id="modalBg" style="display: none;"></div>
+            <div id="modalTransparentBg" class="locationClass" style="display: none;"></div>
+            <img id="splashImg" src="img/Artdb_logo.png"   style="display: none;"/>
+
+            <div id="dialogLocation"  class="locationClass" style="display: none;">
+                <span id="btnLocate"  style="display: inline-block; padding: 8px;"><img src="img/locate.png" class="btnLocate adb-icon " /></span> 
+                <span id="btnZoomNorway" style="display: inline-block; padding: 8px;"><img src="img/norway.png"  class="btnNorway adb-icon "/></span> 
+                <span id="btnSearch" style="display: inline-block; padding: 8px;"><img src="img/sok.png"  class="btnSok adb-icon "/></span> 
+            </div>
+            
+            <div class="ui-grid-d" id="navbar" align="center">
+                <div class="ui-block-a" id="locateContainer">
+                    <div>
+                        <img src="img/pil.png"  id="btnLocation"  class="btnPil adb-navbar-icon "/>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div>
+                        <img src="img/ark.png" id="btnLayerspage" class="btnArk adb-navbar-icon "/>
+                    </div >
+
+                </div>
+                <div class="ui-block-c">
+                    <div>
+                        <img src="img/filter.png" class="btnFilter" style ="height: 45px; margin-top: 5px; width: 59px;" id="btnImgFilter" />
+                    </div>
+                </div>
+                
+                <div class="ui-block-d">
+                    <div>
+                        <img src="img/pluss.png"  id="plus" class="btnPluss adb-navbar-icon "/>
+                    </div >
+                </div>
+                <div class="ui-block-e">
+                    <div>
+                        <img src="img/minus.png" id="minus" class="btnMinus adb-navbar-icon "/>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" style="display: none;">
+                <img src="img/loadingDots.gif" />
+            </div>
+
+            <div id="logo">
+                <img src="img/Artdb_logo.png" id="btnSplash" class="adb-icon " />
+            </div>
+            
+            
+            <div id="divOmArtsdatabanken" class="fullPage" style="display: none;">
+                <div class="fullPageHeader">
+                    <label class="listTittel">Om Artsdatabanken</label> 
+                    <img src="img/btnX.png"   class="btnX skjul splashBtn "  style="float: right; padding-right: 10px; padding-top: 10px;"  />
+                    <img src="img/btnBack.png" id="Img6" class="btnBack btnBackToSplash splashBtn"  style="float: right; padding-right: 10px; padding-top: 10px;" />
+                </div>
+                <div class="fullPageContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="fullPageFooter">
+                    <img src="img/btnX.png"   class="btnX skjul splashBtn "  style="float: right; padding-right: 10px; "  />
+                    <img src="img/btnBack.png" id="Img7" class="btnBack btnBackToSplash splashBtn"  style="float: right; padding-right: 10px;" />
+                </div>
+
+
+
+            </div>
+            <div id="divOmkildene" class="fullPage" style="display: none;">
+              
+                <div class="fullPageHeader">
+                    <label class="listTittel">Om kildene</label> 
+                    <img src="img/btnX.png"   class="btnX skjul splashBtn "  style="float: right; padding-right: 10px; padding-top: 10px;"  />
+                    <img src="img/btnBack.png" id="Img4" class="btnBack btnBackToSplash splashBtn"  style="float: right; padding-right: 10px; padding-top: 10px;" />
+                </div>
+                <div class="fullPageContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="fullPageFooter">
+                    <img src="img/btnX.png"   class="btnX skjul splashBtn "  style="float: right; padding-right: 10px; "  />
+                    <img src="img/btnBack.png" id="Img5" class="btnBack btnBackToSplash splashBtn"  style="float: right; padding-right: 10px; " />
+                </div>
+
+            </div>
+            <div id="divHvordanbrukeArtskart" class="fullPage" style="display: none;">
+                
+                <div class="fullPageHeader">
+                    <label class="listTittel">Hvordan bruke Artskart</label>
+                    <img src="img/btnX.png"   class="btnX skjul splashBtn "  style="float: right; padding-right: 10px; padding-top: 10px;"  />
+                    <img src="img/btnBack.png" id="Img3" class="btnBack btnBackToSplash splashBtn"  style="float: right; padding-right: 10px; padding-top: 10px;" />
+                </div>
+                <div class="fullPageContent">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="fullPageFooter">
+                    <img src="img/btnX.png"   class="btnX skjul splashBtn "  style="float: right; padding-right: 10px;"  />
+                    <img src="img/btnBack.png" id="Img1" class="btnBack btnBackToSplash splashBtn"  style="float: right; padding-right: 10px; " />
+                </div>
+
+            </div>
+
+            
+            <div id="splash" style="display: none;">
+                <img src="img/btnX.png"   class="btnX skjul splashBtn "  data-inline="true" style="float: right; padding-right: 15px; padding-top: 15px;"  />
+                <img src="img/Artdb_logo_text.png"  data-inline="true" style="float: left; max-height: 35px; padding-left: 15px; padding-top: 15px;"  />
+                
+                <p></p>
+                <div class="splashCenter">
+                    <div class="splashCenterContent" >
+                        <div class="splashHeader"><span class="splashHeaderText">Artskart</span></div>
+                        <div class="splashText">
+                            <label>
+                                Artskart er en offentlig kartløsning 
+                                som viser artsdata fra mange kilder 
+                                i ett og samme kart. Her kan du søke 
+                                etter arter og se hvilke arter som 
+                                finnes i ditt område.
+                                <br/>
+                                <br/>
+                             
+                            </label>
+                        </div>
+                    </div>
+                    <div class="splashButtonContainer">
+                        <div class="ui-grid-b" align="center">
+                            <div class="ui-block-a" >
+                                <img src="img/btnOmArtsdatabanken.png"  id="btnOmArtsdatabanken" class=" splashButton"/>
+                            </div>
+                            <div class="ui-block-b">
+                                <img src="img/btnOmkildene.png" id="btnOmkildene" class=" splashButton"/>
+                            </div>
+                            <div class="ui-block-c">
+                                <img src="img/btnHvordanbrukeArtskart.png"  id="btnHvordanbrukeArtskart"class=" splashButton"/>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="splashFooter">
+                    <img src="img/btnOK.png"  class="btnOk splashBtn skjul " style="float: right; padding-right: 15px;"  />
+                    <div style="margin-top: 50px;">
+                        <input type="checkbox" id="chkSplashNoShow" checked="checked">
+                        <label for="chkSplashNoShow" style="font-size: 0.8em;">Ikke vis denne meldingen igjen</label>  
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="filterpage" class="page" style="display: none;">
+            
+                <div class="pageHeaderBase" >
+                    <span class="pageHeaderText">Filter</span>
+                    <img src="img/btnOK.png"  id="btnHideFilter" class="btnOk  adb-navbar-icon btnTop adb-icon "  data-inline="true" />
+                    <img src="img/btnNullstil.png"  id="btnClearFilter" class="btnNullstil  adb-navbar-icon btnTop adb-icon "  data-inline="true"  />
+                </div>
+            
+
+                <div class="pagecontent">
+                
+                    <div>
+                        <fieldset>
+                            <legend><strong>Søk</strong></legend>
+                            <input type="radio" name="artFilter" id="rdTaxon" value="Taxon" checked="checked">
+                            <label for="rdTaxon">Artsnavn</label>
+                            <input type="radio" name="artFilter" id="rdTaxonGroup" value="TaxonGroup" >
+                            <label for="rdTaxonGroup">Artsgruppe</label>  
+                                    
+                            <div id="filterTaxonGroup" style="display: none">
+                                <label class="custom-select"><select id="ddTaxongroups" name="Taxongroups" style="width: 340px;"></select></label>
+                            </div>
+
+                            <div  id="filterTaxon">
+                                <input name="tbTaxonName" id="tbTaxonName" type="search" value="" placeholder="Søk artsnavn" autocomplete="off" style="width: 340px;" />
+                                <input id="tbTaxonNameVal" value="" type= "hidden" />
+                                <ul id="search_resultsTaxon"  class="linkedlist" style="display: none"></ul>
+                            </div>
+
+                        </fieldset>
+                    
+                        <fieldset>
+                            <legend><strong>Presisjon</strong></legend>
+                            <label class="custom-select"><select id="ddObsPrecision" name="ddObsPrecision" style="display: block; width: 340px;"></select></label><br/><p></p>
+                            <input type="checkbox" name="presNo" id="rdoPresNotSet" checked="checked">
+                            <label for="rdoPresNotSet">Inkluder presisjon ikke oppgitt</label>  
+                        </fieldset>
+
+          
+                        <fieldset>
+                            <legend><strong>Status</strong></legend>
+                            <label class="custom-select"><select id="ddStatus" name="ddStatus"  style="width: 340px;" ></select></label>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend><strong>Aktivitet</strong></legend>
+                            <label class="custom-select"><select id="ddActivity" name="ddActivity" style="width: 340px;" ></select></label>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend><strong>Fra Dato</strong></legend>
+                            <!--<label for="dateFrom">Funn nyere en : </label>-->  
+                            <input id="tbdateFrom"  style="width: 100px;" ></input>
+                        </fieldset>
+
+                        <fieldset>
+                            
+                            <legend><strong>Bilder</strong></legend>
+                            
+                            <input type="checkbox" id="chkShowOnlyImageObs" >
+                            <label for="chkShowOnlyImageObs">Vis kun observasjoner med bilder</label>  
+
+            
+                        </fieldset>
+                        
+                        
+                        <fieldset>
+                            <legend><strong>Innstillinger</strong></legend>
+                            <div>
+                                <span style="display: inline-block; width: 150px;"><label class="notrunc"><strong>Maks markører:</strong></label></span>
+                                <input type="number" id="tbMaxMarkers" value="150" min="10" max="1000" style="width: 50px;" data-role="none"/>
+                                <label> <strong>(0-1000) </strong></label>
+                                <p />
+                                                        
+                                <button type="button" id="btnMarkerStyle"  style="width: 120px; height: 25px">marker style toggle</button>
+                            </div>
+                        </fieldset>
+                 
+                  
+                    </div>       
+                </div>
+            </div>
+           
+            <div id="searchpage" class="page" style="display: none;" >
+                <div class="pageHeaderBase">
+                    <span class="pageHeaderText">Søk</span>
+                    <img src="img/btnOK.png"  class="btnOk skjul  btnTop adb-icon "  data-inline="true" />
+                </div>
+                <div class="pagecontent">
+                    <div>
+                        <input type="search" name="query" id="query"
+                               value="" placeholder="Søk på stedsnavn"
+                               autocomplete="off" style="margin-left: 10px; margin-top: 10px"/>
+                    </div>
+                    <ul class="linkedlist" id="search_resultsSted"></ul>
+                </div>
+            </div>
+
+            <div  id="layerspage"  class="page" style="display: none;">
+                <div class="pageHeaderBase">
+                    <span class="pageHeaderText">Kartlag</span>
+                    <img src="img/btnOK.png"  class="btnOk skjul  btnTop adb-icon "  data-inline="true" />
+                </div>
+                <div class="pagecontent">
+                    <ul class="linkedlist" id="layerslist"></ul>
+                </div>
+                 
+            </div>
+        
+            <div  id="observationListpage" class="page" style="display: none;">
+                <div class="pageHeaderBase">
+                    <label class="pageHeaderText notrunc" id="listHeader">Observasjon</label>
+                    <img src="img/btnX.png"  class="btnX skjul  btnTop adb-icon "  data-inline="true"  />
+                    <img src="img/btnBack.png" id="btnBack" class="btnBack  btnTop adb-icon " data-inline="true"  />
+                </div>
+
+                <div class="pagecontent" >
+                
+                    <div id="observationLocationTaxonGroups"  style="height: 100%; overflow: hidden">
+                    
+                        <div class="listHeader">
+                            <span data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"></span></span><br/>
+                            <b>artsgrupper :</b> <span data-bind="text: taxonGroupCount"></span> <br/> 
+                            <b>arter :</b> <span data-bind="text: taxonCount"> </span>
+                        </div>
+                        <div class="listContent"  style="text-align: left;">  
+                            <ul id='taxonGroupList' class="linkedlist" data-bind="foreach:list" >
+                                <li class="next">
+                                    <div data-bind="click: $root.urlClick" class="clickDiv">
+                                        <strong> <span data-bind="text: Name" > </span>&nbsp; (<span data-bind="text: Count"> </span>)</strong>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div id="observationLocationTaxons" style="height: 100%; overflow: hidden">
+                    
+                        <div class="listHeader">
+                            <span data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"> </span></span><br/>
+                            <b><span data-bind="text: taxonGroupName" ></span></b>  <br/>
+                            <b>arter:</b> <span data-bind="text: taxonCount" ></span>, <b>observasjoner: </b> <span data-bind="text: list().length" ></span> 
+                        </div>
+                        <div class="listContent" style="text-align: left;">   
+
+                            <ul id='taxonList' class="linkedlist" data-bind="foreach:list" >
+                                <li class="next">
+                                    <div data-bind="click: $root.urlClick" class="clickDiv">
+                                        <strong> <span data-bind="text: Name" > </span> </strong><i><span data-bind="text: ScientificName"> </span></i> <strong>&nbsp;  (<span data-bind="text: Count"> </span>)</strong>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+  
+                    </div>
+                
+                    <div id="observationLocationList" style="height: 100%; overflow: hidden">
+                    
+                        <div class="listHeader">
+                        
+                            <span  data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"> </span> </span><br/>
+                            <b><span data-bind="visible: taxonName"> <span data-bind="text: taxonName" ></span> </span></b>
+                            (<span data-bind="text: taxonGroupName" ></span>)
+                        </div>
+
+                        <div class="listContent"  style="text-align: left;">
+                        
+                            <ul id='observationlist'  class="linkedlist" data-bind="foreach: { data: list, as: 'item' }">
+                                <li class="next">
+                                    <div data-bind="click: $root.urlClick" class="clickDiv locationdetail" >
+                                       
+                                        <span class="listTittel" data-bind="text: Name">,</span> 
+                                        <span class="listTittel listUnderTittel" data-bind="text: ScientificName"></span> 
+                                        <!--<p><strong>Artsgruppe:</strong> <span data-bind="text: SpeciesGroup" />  </p>-->
+                                        <!--<p data-bind="visible: Locality"><strong>Lokalitet:</strong> <span data-bind="    text: Locality" /> </p>-->
+                                        <p data-bind="visible: Status"><strong>Status:</strong>  <span data-bind="    text: Status" />   </p>
+                                        <p><strong>Finner:</strong>  <span data-bind="text: Collector" /> </p>
+                                        <p><strong>Dato:</strong> <span data-bind="text: ObservationDate" />  </p>
+                                        <p><strong>Kilde:</strong> <span data-bind="text: Institution" />   </p>
+                                        <div class="insetTopRight">
+                                            <img src="img/camera.png" class="btnCamera detailicon" data-bind="visible: HasPhoto" />
+                                        </div>
+                                        <div class="insetBottomRight">
+                                            <img  data-bind="attr: { src: InstitutionLogoUrl }" class="detailicon">
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+ 
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="observationDetails" class="detailsPage" style="margin: 5px" >
+                        <div id="observationDetailsHeader">
+                            <p data-bind="visible: Name"><strong>Norsk navn:</strong> <span data-bind="    text: Name" /></p>
+                            <p data-bind="visible: ScientificName"><strong>Vitenskapelig navn: </strong><i><span data-bind="    text: ScientificName" /></i></p>
+                           
+                        </div>
+                        <div id="detailImgContainer"></div>	
+                        <div id="detailImgPopupContainer"></div>
+                        <br/>
+                        <p data-bind="visible: Collector"><strong>Finner:</strong> <span data-bind="text: Collector" /></p>
+                        <p data-bind="visible: CollctedDate"><strong>Funnet dato: </strong> <span data-bind="text: CollctedDate" /></p> 
+                        <p data-bind="visible: IdentifiedBy"><strong>Determinator: </strong> <span data-bind="text: IdentifiedBy" /></p>
+                        <!--<p data-bind="visible: DatetimeIdentified"><strong>Bestemmelses dato: </strong> <span data-bind="text: DatetimeIdentified" /></p>   -->         
+                        <p data-bind="visible: Count"><strong>Antall:</strong> <span data-bind="text: Count" /></p>
+                        
+                        <p data-bind="visible: Sex"><strong>Kjønn: </strong> <span data-bind="text: Sex" /></p>
+                        <p data-bind="visible: Habitat"><strong>Habitat: </strong> <span data-bind="text: Habitat" /></p>
+                        <!-- <p data-bind="visible: ObsUrl"><strong></strong> <a class="Label"  data-bind="attr: { href: ObsUrl}" target="_blank" >Klide </a>-->
+                        <p data-bind="visible: Notes"><strong>Notater: </strong> <span data-bind="text: Notes" /></p>
+                        <br/>
+                        <p data-bind="visible: BasisOfRecord"><strong>Type objekt: </strong> <span data-bind="    text: BasisOfRecord" /></p>
+                        <p data-bind="visible: DetailUrl"><strong>Url: </strong> <a data-bind="    attr: { href: DetailUrl }" target="_blank">Kilde</a></p>
+                            
+                        <img data-bind="attr: { src: InstitutionLogoUrl }" class="detailicon" style="float: right">
+                        <p><strong>Institusjon:</strong> <a  data-bind="attr: { href: InstitutionUrl, title: Institution }" target="_blank"><span data-bind="text: Institution" /> </a></p> 
+                        <p data-bind="visible: Collection"><strong>Samling: </strong> <span data-bind="text: Collection" /></p>
+                        <p data-bind="visible: DatasetName"><strong>Dataset: </strong> <span data-bind="text: DatasetName" /></p>
+                        <p></p>
+                            
+                        <!-- ko foreach: PropertyUrls -->
+                        <p><strong>Status: </strong><a data-bind="attr: { href: Url }" target="_blank"><span data-bind="text: LinkTekst" /> </a> </p>
+                        <!-- /ko -->
+                        <br/>
+
+                        <p><strong>Fylke</strong> <span data-bind="text: County" /> </p>            
+                        <p><strong>Kommune</strong> <span data-bind="    text: Municipality" /></p>            
+                        <p><strong>Lokalitetsnavn </strong> <span data-bind="text: Locality" /> </p>            
+                        <p><strong>Lengdegrad </strong> <span data-bind="text: Longitude" /></p>
+                        <p><strong>Breddegrad </strong> <span data-bind="text: Latitude" /></p>
+                        <p data-bind="visible: Precision"><strong>Geografisk presisjon(m)</strong> <span data-bind="text: Precision" /> </p>
+                        <br/>
+
+                        <span id="btnTaxonomy" class="clickDiv">  <strong> + Taksonomi</strong> </span>
+                        <div id="divTaxonomy" style="display: none; padding-left: 10px;">
+                            <p><strong>Autor:</strong> <span data-bind="text: Author" /> </p>
+                            <p><strong>Rike :</strong> <span data-bind="text: kingdom" /></p>
+                            <p><strong>Rekke :</strong> <span data-bind="text: phylum" /> </p>
+                            <p><strong>Klasse :</strong> <span data-bind="text: klass" /></p>
+                            <p><strong>Orden :</strong> <span data-bind="text: order" /> </p>
+                            <p><strong>Familie :</strong> <span data-bind="text: family" /></p>
+                            <p><strong>Slekt :</strong> <span data-bind="text: genus" /></p>
+                            <p data-bind="visible: specificEpithet"><strong>Art :</strong> <span data-bind="text: specificEpithet" /></p>
+                            <p data-bind="visible: infraspecificEpithet"><strong>Underart :</strong> <span data-bind="text: infraspecificEpithet" /></p>
+                        </div>
+                    </div>
+
+                </div>
+            
+            </div>
+
+
+    </body>
+</html>
