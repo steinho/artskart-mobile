@@ -7,14 +7,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="google" value="notranslate" />
-		
-		<link href="css/styles.min.css" rel="stylesheet" />
-        <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+        
+       
+        <!-- Release  -->
+                 
+<!--        <link href="css/styles.min.css" rel="stylesheet" />
+       <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
         <script src="Scripts/external.min.js"> </script>
        
         <script src="Scripts/Artskart.Settings.js"> </script>            
-        <script src="Scripts/artskart.min.js"> </script>
-		<script src="phonegap.js"></script>
+        <script src="Scripts/artskart.min.js"> </script>-->
+
+
+        <!-- Release  -->
+        
+        <!-- Debug  -->
+        <link href="css/jquery-ui.css" rel="stylesheet" />
+        <link href="css/jquery.fancybox.css" rel="stylesheet" />
+        <link href="css/jquery.mobile-1.3.0.min.css" rel="stylesheet" />
+        <link href="css/toastr.min.css" rel="stylesheet" />
+        <link href="css/style.mobile.css" rel="stylesheet" />
+        <script src="Scripts/fastclick.js"></script>
+        <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+        <script src="Scripts/Artskart.Settings.js"> </script>
+        <script src="Scripts/jquery-2.0.2.js"> </script>
+        <script src="Scripts/jquery-ui.min.js"> </script>
+        <script src="Scripts/jquery.fancybox.js"> </script>
+        <script src="Scripts/jquery.blockUI.js"> </script>
+        <script src="Scripts/OpenLayers.js"> </script>
+        <script src="Scripts/knockout-2.2.1.js"> </script>
+        <script src="Scripts/sammy-0.7.4.min.js"> </script>
+        <script src="Scripts/toastr.min.js"> </script>
+        <script src="Scripts/store.js"></script>
+        <script src="Scripts/OpenLayersWindowsPinchZoom.js"></script>
+        <script src="Scripts/Artskart.Map.js"> </script>
+        <script src="Scripts/Artskart.ViewModels.js"> </script>
+        <script src="Scripts/Artskart.Base.js"> </script>
+        <script src="Scripts/Artskart.Routes.js"> </script>
+        <!-- /debug -->
+      
+<!--        <script src="cordova.android.js"> </script>
+        <script src="cordova-2.2.0.js"> </script>-->
     </head>
     <body>
         <div id="map" class="needsclick"></div>
@@ -122,10 +155,31 @@
                 </div>
                 <div class="fullPageContent">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <b>Utvalg</b><br/>
+                        Appen er laget slik at den automatisk zoomer inn til det stedet der du er. Du får se artsfunnene i området som prikker på kartet. Når du trykker på en av prikkene får du opp ei liste over alle artene som er funnet på den aktuelle lokaliteten. Hvis du vil se nærmere på et artsfunn trykker du på artsnavnet og du får ei ny liste med nøkkelopplysninger om alle artsfunnene av den arten du har valgt. Det siste funnet av arten på denne lokaliteten står øverst. Du kan trykke videre på det enkelte funn og se på detaljene om hvem som har gjort artsfunnet, dato, hvilken institusjon som har tilbyr informasjonen om artsfunnet m.m. Artsfunn med bilder er merket med et eget fotosymbol.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <b>Navigasjon</b><br/>
+
+Standardutvalget når du åpner appen er at alle artsfunn som
+har bedre geografisk presisjon enn 100 m fra der prikken er plassert, blir med.
+Om du ønsker å se artsfunn med bedre eller dårligere presisjon, kan du velge
+dette under <b>presisjon. </b>Du kan også
+velge å se på ulike <b>kategorier</b>
+arter, enten arter på den norske rødlista eller fremmede arter. Hvis du ønsker
+å se på artsfunnene av en spesiell art, kan du <b>søke</b> på artsnavnet, enten norsk navn eller vitenskapelig navn. Hvis
+du ønsker å velge alle artene i en spesiell artsgruppe, kan du velge dette i
+nedtrekksmenyen. Har du valgt en ikke-stasjonær art eller artsgruppe kan du
+også velge ut hvilke artsfunn som hører til ulike aktivitetstyper (fødesøkende,
+forflytning m.v.). Hundretusener av artsfunn som blir rapportert i
+Artsobservasjoner har bildedokumentasjon. Du kan velge artsfunn med <b>bilder</b>, då får du se bilder av det
+aktuelle artsfunnet. Du kan også velge dato og se alle artsfunn som er yngre
+enn denne datoen. Når du har gjort et valg i menyene, må du bekrefte valgene på
+<b>OK</b> knappen. Du kan også oppheve
+valgene dine ved å trykke på <b>opphev
+utvalg.</b></p><p>
+                        <b>Bakgrunnskart</b><br/>
+                       Siden appen zoomer ned til der du er, kommer det mest detaljerte Norgeskartet opp som standard. Hvis du ønsker å bruke andre bakgrunnskart, kan du velge alternativene under kartlag-ikonet.
                     </p>
                 </div>
                 <div class="fullPageFooter">
@@ -186,27 +240,29 @@
             
                 <div class="pageHeaderBase" >
                     <span class="pageHeaderText">Filter</span>
-                    <img src="img/btnOK.png"  id="btnHideFilter" class="btnOk  adb-navbar-icon btnTop adb-icon "  data-inline="true" />
-                    <img src="img/btnNullstil.png"  id="btnClearFilter" class="btnNullstil  adb-navbar-icon btnTop adb-icon "  data-inline="true"  />
+                    <img src="img/btnOK.png"  id="btnHideFilter" style="margin-top: 5px" class="btnHideFilter adb-navbar-icon btnTop adb-icon "  data-inline="true" />
+                    
                 </div>
             
 
                 <div class="pagecontent">
                 
                     <div>
+                        <button type="button" id="btnClearFilter"  style="width: 120px; height: 25px; float: right; margin-right: 18px "  data-inline="true">Resett filter</button>
+                        <!--<img src="img/btnNullstil.png"  id="btnClearFilter" class="btnNullstil  adb-navbar-icon btnTop adb-icon "  data-inline="true"  />-->
                         <fieldset>
-                            <legend><strong>Søk</strong></legend>
+                            <!--<legend><strong>Søk</strong></legend>-->
                             <input type="radio" name="artFilter" id="rdTaxon" value="Taxon" checked="checked">
                             <label for="rdTaxon">Artsnavn</label>
                             <input type="radio" name="artFilter" id="rdTaxonGroup" value="TaxonGroup" >
                             <label for="rdTaxonGroup">Artsgruppe</label>  
                                     
                             <div id="filterTaxonGroup" style="display: none">
-                                <label class="custom-select"><select id="ddTaxongroups" name="Taxongroups" style="width: 340px;"></select></label>
+                                <label class="custom-select"><select id="ddTaxongroups" name="Taxongroups" style="width: 370px;"></select></label>
                             </div>
 
                             <div  id="filterTaxon">
-                                <input name="tbTaxonName" id="tbTaxonName" type="search" value="" placeholder="Søk artsnavn" autocomplete="off" style="width: 340px;" />
+                                <input name="tbTaxonName" id="tbTaxonName" type="search" value="" placeholder="Søk artsnavn" autocomplete="off" style="width: 370px;" />
                                 <input id="tbTaxonNameVal" value="" type= "hidden" />
                                 <ul id="search_resultsTaxon"  class="linkedlist" style="display: none"></ul>
                             </div>
@@ -215,20 +271,20 @@
                     
                         <fieldset>
                             <legend><strong>Presisjon</strong></legend>
-                            <label class="custom-select"><select id="ddObsPrecision" name="ddObsPrecision" style="display: block; width: 340px;"></select></label><br/><p></p>
+                            <label class="custom-select"><select id="ddObsPrecision" name="ddObsPrecision" style="display: block; width: 370px;"></select></label><br/><p></p>
                             <input type="checkbox" name="presNo" id="rdoPresNotSet" checked="checked">
                             <label for="rdoPresNotSet">Inkluder presisjon ikke oppgitt</label>  
                         </fieldset>
 
           
                         <fieldset>
-                            <legend><strong>Status</strong></legend>
-                            <label class="custom-select"><select id="ddStatus" name="ddStatus"  style="width: 340px;" ></select></label>
+                            <legend><strong>Kategori</strong></legend>
+                            <label class="custom-select"><select id="ddStatus" name="ddStatus"  style="width: 370px;" ></select></label>
                         </fieldset>
                         
                         <fieldset>
                             <legend><strong>Aktivitet</strong></legend>
-                            <label class="custom-select"><select id="ddActivity" name="ddActivity" style="width: 340px;" ></select></label>
+                            <label class="custom-select"><select id="ddActivity" name="ddActivity" style="width: 370px;" ></select></label>
                         </fieldset>
                         
                         <fieldset>
@@ -246,8 +302,10 @@
 
             
                         </fieldset>
-                        
-                        
+                        <div style="margin-left: 340px"  data-inline="true">
+                            <img src="img/btnOK.png"  id="btnHideFilter2" class="btnHideFilter adb-navbar-icon adb-icon " />
+                        </div>
+                        <hr/>
                         <fieldset>
                             <legend><strong>Innstillinger</strong></legend>
                             <div>
@@ -256,7 +314,7 @@
                                 <label> <strong>(0-1000) </strong></label>
                                 <p />
                                                         
-                                <button type="button" id="btnMarkerStyle"  style="width: 120px; height: 25px">marker style toggle</button>
+                                <!--<button type="button" id="btnMarkerStyle"  style="width: 120px; height: 25px">marker style toggle</button>-->
                             </div>
                         </fieldset>
                  
@@ -303,7 +361,7 @@
                     <div id="observationLocationTaxonGroups"  style="height: 100%; overflow: hidden">
                     
                         <div class="listHeader">
-                            <span data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"></span></span><br/>
+                         <span  class="gradientEllipsis" data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"></span></span><br/>
                             <b>artsgrupper :</b> <span data-bind="text: taxonGroupCount"></span> <br/> 
                             <b>arter :</b> <span data-bind="text: taxonCount"> </span>
                         </div>
@@ -321,9 +379,9 @@
                     <div id="observationLocationTaxons" style="height: 100%; overflow: hidden">
                     
                         <div class="listHeader">
-                            <span data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"> </span></span><br/>
+                            <span class="gradientEllipsis" data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"> </span></span><br/>
                             <b><span data-bind="text: taxonGroupName" ></span></b>  <br/>
-                            <b>arter:</b> <span data-bind="text: taxonCount" ></span>, <b>observasjoner: </b> <span data-bind="text: list().length" ></span> 
+                            <b>arter:</b> <span data-bind="text: list().length" ></span> 
                         </div>
                         <div class="listContent" style="text-align: left;">   
 
@@ -342,7 +400,7 @@
                     
                         <div class="listHeader">
                         
-                            <span  data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"> </span> </span><br/>
+                            <span class="gradientEllipsis" data-bind="visible: locality"><b>Lokalitet: </b><span data-bind="text: locality"> </span> </span><br/>
                             <b><span data-bind="visible: taxonName"> <span data-bind="text: taxonName" ></span> </span></b>
                             (<span data-bind="text: taxonGroupName" ></span>)
                         </div>
@@ -358,7 +416,7 @@
                                         <!--<p><strong>Artsgruppe:</strong> <span data-bind="text: SpeciesGroup" />  </p>-->
                                         <!--<p data-bind="visible: Locality"><strong>Lokalitet:</strong> <span data-bind="    text: Locality" /> </p>-->
                                         <p data-bind="visible: Status"><strong>Status:</strong>  <span data-bind="    text: Status" />   </p>
-                                        <p><strong>Finner:</strong>  <span data-bind="text: Collector" /> </p>
+                                        <p><strong>Rapportør:</strong>  <span data-bind="text: Collector" /> </p>
                                         <p><strong>Dato:</strong> <span data-bind="text: ObservationDate" />  </p>
                                         <p><strong>Kilde:</strong> <span data-bind="text: Institution" />   </p>
                                         <div class="insetTopRight">
@@ -384,8 +442,8 @@
                         <div id="detailImgContainer"></div>	
                         <div id="detailImgPopupContainer"></div>
                         <br/>
-                        <p data-bind="visible: Collector"><strong>Finner:</strong> <span data-bind="text: Collector" /></p>
-                        <p data-bind="visible: CollctedDate"><strong>Funnet dato: </strong> <span data-bind="text: CollctedDate" /></p> 
+                        <p data-bind="visible: Collector"><strong>Rapportør:</strong> <span data-bind="text: Collector" /></p>
+                        <p data-bind="visible: CollctedDate"><strong>Dato funnet: </strong> <span data-bind="text: CollctedDate" /></p> 
                         <p data-bind="visible: IdentifiedBy"><strong>Determinator: </strong> <span data-bind="text: IdentifiedBy" /></p>
                         <!--<p data-bind="visible: DatetimeIdentified"><strong>Bestemmelses dato: </strong> <span data-bind="text: DatetimeIdentified" /></p>   -->         
                         <p data-bind="visible: Count"><strong>Antall:</strong> <span data-bind="text: Count" /></p>
@@ -396,16 +454,16 @@
                         <p data-bind="visible: Notes"><strong>Notater: </strong> <span data-bind="text: Notes" /></p>
                         <br/>
                         <p data-bind="visible: BasisOfRecord"><strong>Type objekt: </strong> <span data-bind="    text: BasisOfRecord" /></p>
-                        <p data-bind="visible: DetailUrl"><strong>Url: </strong> <a data-bind="    attr: { href: DetailUrl }" target="_blank">Kilde</a></p>
+                        <p data-bind="visible: DetailUrl"><strong>Url: </strong> <a data-bind="    attr: { href: DetailUrl }" target="_system">Kilde</a></p>
                             
                         <img data-bind="attr: { src: InstitutionLogoUrl }" class="detailicon" style="float: right">
-                        <p><strong>Institusjon:</strong> <a  data-bind="attr: { href: InstitutionUrl, title: Institution }" target="_blank"><span data-bind="text: Institution" /> </a></p> 
+                        <p><strong>Institusjon:</strong> <a  data-bind="attr: { href: InstitutionUrl, title: Institution }" target="_system"><span data-bind="text: Institution" /> </a></p> 
                         <p data-bind="visible: Collection"><strong>Samling: </strong> <span data-bind="text: Collection" /></p>
                         <p data-bind="visible: DatasetName"><strong>Dataset: </strong> <span data-bind="text: DatasetName" /></p>
                         <p></p>
                             
                         <!-- ko foreach: PropertyUrls -->
-                        <p><strong>Status: </strong><a data-bind="attr: { href: Url }" target="_blank"><span data-bind="text: LinkTekst" /> </a> </p>
+                        <p><strong>Kategori: </strong><a data-bind="attr: { href: Url }" target="_system"><span data-bind="text: LinkTekst" /> </a> </p>
                         <!-- /ko -->
                         <br/>
 
@@ -414,10 +472,11 @@
                         <p><strong>Lokalitetsnavn </strong> <span data-bind="text: Locality" /> </p>            
                         <p><strong>Lengdegrad </strong> <span data-bind="text: Longitude" /></p>
                         <p><strong>Breddegrad </strong> <span data-bind="text: Latitude" /></p>
-                        <p data-bind="visible: Precision"><strong>Geografisk presisjon(m)</strong> <span data-bind="text: Precision" /> </p>
+                        <p data-bind="visible: Precision"><strong>Geografisk presisjon (m) </strong> <span data-bind="text: Precision" /> </p>
                         <br/>
-
-                        <span id="btnTaxonomy" class="clickDiv">  <strong> + Taksonomi</strong> </span>
+                        
+                        <div id="btnTaxonomy" class="clickDiv">
+                        <span id="spanTaxonomy"><strong> + Taksonomi</strong> </span>
                         <div id="divTaxonomy" style="display: none; padding-left: 10px;">
                             <p><strong>Autor:</strong> <span data-bind="text: Author" /> </p>
                             <p><strong>Rike :</strong> <span data-bind="text: kingdom" /></p>
@@ -428,7 +487,7 @@
                             <p><strong>Slekt :</strong> <span data-bind="text: genus" /></p>
                             <p data-bind="visible: specificEpithet"><strong>Art :</strong> <span data-bind="text: specificEpithet" /></p>
                             <p data-bind="visible: infraspecificEpithet"><strong>Underart :</strong> <span data-bind="text: infraspecificEpithet" /></p>
-                        </div>
+                        </div></div>
                     </div>
 
                 </div>
