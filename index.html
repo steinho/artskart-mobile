@@ -9,45 +9,15 @@
         <meta name="google" value="notranslate" />
         
        
-        <!-- Release  -->
-                 
-<!--        <link href="css/styles.min.css" rel="stylesheet" />
+<link href="css/styles.min.css" rel="stylesheet" />
        <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
         <script src="Scripts/external.min.js"> </script>
        
         <script src="Scripts/Artskart.Settings.js"> </script>            
-        <script src="Scripts/artskart.min.js"> </script>-->
+        <script src="Scripts/artskart.min.js"> </script>
 
 
-        <!-- Release  -->
-        
-        <!-- Debug  -->
-        <link href="css/jquery-ui.css" rel="stylesheet" />
-        <link href="css/jquery.fancybox.css" rel="stylesheet" />
-        <link href="css/jquery.mobile-1.3.0.min.css" rel="stylesheet" />
-        <link href="css/toastr.min.css" rel="stylesheet" />
-        <link href="css/style.mobile.css" rel="stylesheet" />
-        <script src="Scripts/fastclick.js"></script>
-        <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
-        <script src="Scripts/Artskart.Settings.js"> </script>
-        <script src="Scripts/jquery-2.0.2.js"> </script>
-        <script src="Scripts/jquery-ui.min.js"> </script>
-        <script src="Scripts/jquery.fancybox.js"> </script>
-        <script src="Scripts/jquery.blockUI.js"> </script>
-        <script src="Scripts/OpenLayers.js"> </script>
-        <script src="Scripts/knockout-2.2.1.js"> </script>
-        <script src="Scripts/sammy-0.7.4.min.js"> </script>
-        <script src="Scripts/toastr.min.js"> </script>
-        <script src="Scripts/store.js"></script>
-        <script src="Scripts/OpenLayersWindowsPinchZoom.js"></script>
-        <script src="Scripts/Artskart.Map.js"> </script>
-        <script src="Scripts/Artskart.ViewModels.js"> </script>
-        <script src="Scripts/Artskart.Base.js"> </script>
-        <script src="Scripts/Artskart.Routes.js"> </script>
-        <!-- /debug -->
-      
-<!--        <script src="cordova.android.js"> </script>
-        <script src="cordova-2.2.0.js"> </script>-->
+        <script src="phonegap.js"> </script>
     </head>
     <body>
         <div id="map" class="needsclick"></div>
@@ -155,29 +125,33 @@
                 </div>
                 <div class="fullPageContent">
                     <p>
-                        <b>Utvalg</b><br/>
+                        <b>Generelt</b><br/>
                         Appen er laget slik at den automatisk zoomer inn til det stedet der du er. Du får se artsfunnene i området som prikker på kartet. Når du trykker på en av prikkene får du opp ei liste over alle artene som er funnet på den aktuelle lokaliteten. Hvis du vil se nærmere på et artsfunn trykker du på artsnavnet og du får ei ny liste med nøkkelopplysninger om alle artsfunnene av den arten du har valgt. Det siste funnet av arten på denne lokaliteten står øverst. Du kan trykke videre på det enkelte funn og se på detaljene om hvem som har gjort artsfunnet, dato, hvilken institusjon som har tilbyr informasjonen om artsfunnet m.m. Artsfunn med bilder er merket med et eget fotosymbol.
                     </p>
                     <p>
-                        <b>Navigasjon</b><br/>
+                        <b>Utvalg</b><br/>
 
-Standardutvalget når du åpner appen er at alle artsfunn som
-har bedre geografisk presisjon enn 100 m fra der prikken er plassert, blir med.
-Om du ønsker å se artsfunn med bedre eller dårligere presisjon, kan du velge
-dette under <b>presisjon. </b>Du kan også
-velge å se på ulike <b>kategorier</b>
-arter, enten arter på den norske rødlista eller fremmede arter. Hvis du ønsker
-å se på artsfunnene av en spesiell art, kan du <b>søke</b> på artsnavnet, enten norsk navn eller vitenskapelig navn. Hvis
-du ønsker å velge alle artene i en spesiell artsgruppe, kan du velge dette i
-nedtrekksmenyen. Har du valgt en ikke-stasjonær art eller artsgruppe kan du
-også velge ut hvilke artsfunn som hører til ulike aktivitetstyper (fødesøkende,
-forflytning m.v.). Hundretusener av artsfunn som blir rapportert i
-Artsobservasjoner har bildedokumentasjon. Du kan velge artsfunn med <b>bilder</b>, då får du se bilder av det
-aktuelle artsfunnet. Du kan også velge dato og se alle artsfunn som er yngre
-enn denne datoen. Når du har gjort et valg i menyene, må du bekrefte valgene på
-<b>OK</b> knappen. Du kan også oppheve
-valgene dine ved å trykke på <b>opphev
-utvalg.</b></p><p>
+                        Standardutvalget når du åpner appen er at alle artsfunn som
+                        har bedre geografisk presisjon enn 100 m fra der prikken er plassert, blir med.
+                        Om du ønsker å se artsfunn med bedre eller dårligere presisjon, kan du velge
+                        dette under <b>presisjon. </b>Du kan også
+                        velge å se på ulike <b>kategorier</b>
+                        arter, enten arter på den norske rødlista eller fremmede arter. Hvis du ønsker
+                        å se på artsfunnene av en spesiell art, kan du <b>søke</b> på artsnavnet, enten norsk navn eller vitenskapelig navn. Hvis
+                        du ønsker å velge alle artene i en spesiell artsgruppe, kan du velge dette i
+                        nedtrekksmenyen. Har du valgt en ikke-stasjonær art eller artsgruppe kan du
+                        også velge ut hvilke artsfunn som hører til ulike aktivitetstyper (fødesøkende,
+                        forflytning m.v.). Hundretusener av artsfunn som blir rapportert i
+                        Artsobservasjoner har bildedokumentasjon. Du kan velge artsfunn med <b>bilder</b>, då får du se bilder av det
+                        aktuelle artsfunnet. Du kan også velge dato og se alle artsfunn som er yngre
+                        enn denne datoen. Når du har gjort et valg i menyene, må du bekrefte valgene på
+                        <b>OK</b> knappen. Du kan også oppheve
+                        valgene dine ved å trykke på <b>opphev
+                                                         utvalg.</b></p>
+                    <p>
+                        <b>Navigasjon</b><br/>
+                        Dersom du vil se større eller mindre geografiske områder enn der du er, kan du bruke zoome ut (-)eller zoome inn (+) knappen. Du kan også bevege deg i kartet ved å dra kartet over skjermen. Under kartsøk-ikonet kan du velge hele Norge. Du kan også velge å zoome inn til der du er eller du kan søke og deretter velge et stedsnavn ved å trykke på navnet. Da navigerer appen til det stedet du har valgt. Ikke alle lokale stedsnavn i Norge kommer opp, men alle navn som er i stednavnregisteret til Statens kartverk får du treff på.</p>
+                    <p>
                         <b>Bakgrunnskart</b><br/>
                        Siden appen zoomer ned til der du er, kommer det mest detaljerte Norgeskartet opp som standard. Hvis du ønsker å bruke andre bakgrunnskart, kan du velge alternativene under kartlag-ikonet.
                     </p>
