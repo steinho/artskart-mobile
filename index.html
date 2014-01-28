@@ -4,20 +4,35 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <title>Artskart</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="google" value="notranslate" />
         
        
 <link href="css/styles.min.css" rel="stylesheet" />
-       <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
-        <script src="Scripts/external.min.js"> </script>
-       
-        <script src="Scripts/Artskart.Settings.js"> </script>            
-        <script src="Scripts/artskart.min.js"> </script>
-
-
-        <script src="phonegap.js"> </script>
+        <link href="css/jquery-ui.css" rel="stylesheet" />
+        <link href="css/jquery.fancybox.css" rel="stylesheet" />
+        <link href="css/jquery.mobile-1.3.0.min.css" rel="stylesheet" />
+        <link href="css/toastr.min.css" rel="stylesheet" />
+        <link href="css/style.mobile.css" rel="stylesheet" />
+        <script src="Scripts/fastclick.js"></script>
+        <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+        <script src="Scripts/Artskart.Settings.js"> </script>
+        <script src="Scripts/jquery-2.0.2.js"> </script>
+        <script src="Scripts/jquery-ui.min.js"> </script>
+        <script src="Scripts/jquery.fancybox.js"> </script>
+        <script src="Scripts/jquery.blockUI.js"> </script>
+        <script src="Scripts/OpenLayers.js"> </script>
+        <script src="Scripts/knockout-2.2.1.js"> </script>
+        <script src="Scripts/sammy-0.7.4.min.js"> </script>
+        <script src="Scripts/toastr.min.js"> </script>
+        <script src="Scripts/store.js"></script>
+        <script src="Scripts/OpenLayersWindowsPinchZoom.js"></script>
+        <script src="Scripts/Artskart.Map.js"> </script>
+        <script src="Scripts/Artskart.ViewModels.js"> </script>
+        <script src="Scripts/Artskart.Base.js"> </script>
+        <script src="Scripts/Artskart.Routes.js"> </script>
+        <script src="Scripts/Artskart.Root.js"> </script>
     </head>
     <body>
         <div id="map" class="needsclick"></div>
@@ -65,7 +80,7 @@
             </div>
 
             <div id="loading" style="display: none;">
-                <img src="img/loadingDots.gif" />
+                <img src="img/loadingDots.gif" style="height: 4px; width: 288px;" />
             </div>
 
             <div id="logo">
