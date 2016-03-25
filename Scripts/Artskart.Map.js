@@ -416,22 +416,22 @@ app.ArtskartMap = function (mapDiv) {
             //        srs: "EPSG:900913"
             //    }, { transitionEffect: 'resize' }
             //), 
-            new OpenLayers.Layer.Bing({
-                key: apiKey,
-                type: "Aerial",
-                name: "Bing Aerial",
-                transitionEffect: 'resize',
-                numZoomLevels: 19,
-                projection: sm
-            }),
-            new OpenLayers.Layer.Bing({
-                key: apiKey,
-                type: "AerialWithLabels",
-                name: "Bing Aerial + Labels",
-                transitionEffect: 'resize',
-                numZoomLevels: 19,
-                projection: sm
-            }),
+            // new OpenLayers.Layer.Bing({
+                // key: apiKey,
+                // type: "Aerial",
+                // name: "Bing Aerial",
+                // transitionEffect: 'resize',
+                // numZoomLevels: 19,
+                // projection: sm
+            // }),
+            // new OpenLayers.Layer.Bing({
+                // key: apiKey,
+                // type: "AerialWithLabels",
+                // name: "Bing Aerial + Labels",
+                // transitionEffect: 'resize',
+                // numZoomLevels: 19,
+                // projection: sm
+            // }),
             vector,
             observationsLayer
         ],
